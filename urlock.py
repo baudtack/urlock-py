@@ -1,6 +1,5 @@
 import datetime
 import random
-import json
 import requests
 import sseclient
 

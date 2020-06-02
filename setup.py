@@ -1,33 +1,24 @@
-from setuptools import setup, find_packages
+import os
+import setuptools
 
-with open('README.md') as readme_file:
-    README = readme_file.read()
+# Utility function to read the README file.
+# Used for the long_description.  It's nice, because now 1) we have a top level
+# README file and 2) it's easier to type in the README file than to put a raw
+# string in below ...
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-with open('HISTORY.md') as history_file:
-    HISTORY = history_file.read()
-
-setup_args = dict(
-    name='urlock',
-    version='0.1',
-    description='Library for connecting to a running Urbit ship',
+setuptools.setup(
+    name = "urlock",
+    version = "0.1.12",
+    author = "David Kerschner",
+    author_email = "dkerschner@gmail.com",
+    description = "Library for talking to a running Urbit ship",
+    license = "MIT",
+    keywords = "urbit urlock",
+    url = "http://github.com/baudtack/urlock-py",
+    packages=setuptools.find_packages(),
+    install_requires=['requests', 'sseclient-py'],
+    long_description=read('README.md'),
     long_description_content_type="text/markdown",
-    long_description=README + '\n\n' + HISTORY,
-    license='MIT',
-    packages=find_packages(),
-    author='David Kerschner',
-    author_email='dkerschner@gmail.com',
-    keywords=['urlock', 'urbit'],
-    url='https://github.com/baudtack/urlock',
-    download_url='https://pypi.org/project/urlock/'
 )
-
-install_requires = [
-    'datetime',
-    'random',
-    'json',
-    'requests',
-    'sseclient'
-]
-
-if __name__ == '__main__':
-    setup(**setup_args, install_requires=install_requires)
