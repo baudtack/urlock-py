@@ -5,34 +5,48 @@ Urlock-py is a python library for connecting to a running urbit ship.
 It consists of a single class `Urlock`. Methods are below.
 
 `__init__(url, code)`
+
     Constructor
+
     `url` - url to the http interface of the running ship
+
     `code` - the `+code` of the ship, should never be published
 
 
 `connect()`
+
     Connect to the running ship
 
 
 `poke(ship, app, mark, j)`
+
     `ship` - ship to send the poke
+
     `app` - gall application to send the poke to
+
     `mark` - mark of data sent to the gall application
+
     `j` - json poke data
 
 
 `ack(eventId)`
+
     Send an acknowledgment of receipt of a message so it's cleared from the ship's queue 
+
     `eventId` - id of the event to acknowledge
 
 
 `sse_pipe()`
+
     returns the sseclient object
 
 
 `subscribe(ship, app, path)`
+
     `ship` - ship on which the gall application lives
+
     `app` - gall application to subscribe to
+
     `path` - path to subscribe on
 
 
