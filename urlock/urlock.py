@@ -31,7 +31,7 @@ class Urlock():
         return res
 
     def ack(self, eventId):
-       return self.session.put(self.channelUrl, data = { "event-id": eventId })
+       return self.session.put(self.channelUrl, json = [{ 'action': "ack", "event-id": eventId }])
 
     def sse_pipe(self):
         if(not self.sseclient):

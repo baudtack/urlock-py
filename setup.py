@@ -10,7 +10,7 @@ def read(fname):
 
 setuptools.setup(
     name = "urlock",
-    version = "0.1.12",
+    version = "0.1.22",
     author = "David Kerschner",
     author_email = "dkerschner@gmail.com",
     description = "Library for talking to a running Urbit ship",
